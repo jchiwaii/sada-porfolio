@@ -5,14 +5,14 @@ import { ArrowDown, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 
 export function Hero() {
     return (
-        <section className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center gap-16 px-6 lg:px-20 pt-32 pb-16 overflow-hidden bg-background text-foreground">
+        <section className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center gap-16 px-6 lg:px-20 pt-32 pb-16 overflow-hidden bg-transparent text-foreground">
 
             {/* Subtle Dark Background Effects */}
             <div className="absolute inset-0 pointer-events-none">
                 {/* Top Right Glow */}
-                <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/5 blur-[150px] rounded-full opacity-40 mix-blend-screen animate-pulse-slow" />
+                <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/10 blur-[150px] rounded-full opacity-30 mix-blend-screen animate-pulse-slow" />
                 {/* Bottom Left Glow */}
-                <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-blue-500/5 blur-[150px] rounded-full opacity-30 mix-blend-screen" />
+                <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-blue-500/5 blur-[150px] rounded-full opacity-20 mix-blend-screen" />
 
                 {/* Grid Overlay */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />

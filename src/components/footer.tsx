@@ -32,11 +32,9 @@ export function Footer() {
 
     return (
         <>
-            <footer className="px-4 md:px-8 py-24 bg-background border-t border-border/40">
+            <footer className="relative py-12 px-6 border-t border-white/5 bg-transparent overflow-hidden">
                 <div className="max-w-6xl mx-auto flex flex-col items-center justify-center text-center opacity-60 hover:opacity-100 transition-opacity duration-500">
-                    <h1 className="text-[10vw] leading-none font-display font-bold text-foreground tracking-tighter mb-6">
-                        CHILUMO
-                    </h1>
+
                     <div className="flex items-center gap-2 text-sm text-muted-foreground font-medium tracking-wide uppercase">
                         <span>© {new Date().getFullYear()}</span>
                         <span className="w-1 h-1 rounded-full bg-border" />

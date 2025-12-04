@@ -5,99 +5,110 @@ import { Send, Mail, MapPin, Phone } from "lucide-react";
 
 export function Contact() {
     return (
-        <section id="contact" className="py-16 md:py-24 px-4 md:px-8 relative bg-background">
-            <div className="max-w-5xl mx-auto rounded-[40px] border border-border bg-white/60 backdrop-blur-sm px-8 py-16 md:px-16 shadow-lg shadow-black/5">
+        <section id="contact" className="py-16 md:py-24 px-4 md:px-8 relative bg-transparent">
+            <div className="max-w-5xl mx-auto rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-sm px-8 py-16 md:px-16 shadow-lg shadow-black/5">
                 <div className="flex flex-col md:flex-row gap-16">
                     <motion.div
-                        initial={{ opacity: 0, y: 16 }}
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex-1 space-y-10"
+                        transition={{ duration: 0.6 }}
+                        className="flex-1 space-y-8"
                     >
                         <div>
-                            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Get in touch</p>
-                            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground leading-tight">
-                                Let's discuss how I can contribute to your <span className="italic font-light">engineering goals</span>.
-                            </h2>
-                            <p className="text-muted-foreground mt-6">
-                                I am available for new opportunities and collaborations. Feel free to reach out via email or phone.
+                            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">Let's work together</h2>
+                            <p className="text-muted-foreground leading-relaxed">
+                                I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
                             </p>
                         </div>
 
-                        <div className="space-y-8 text-foreground">
-                            <div className="flex items-center gap-4">
-                                <span className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                                    <MapPin className="w-5 h-5 text-muted-foreground" />
-                                </span>
+                        <div className="space-y-6">
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                                    <MapPin className="w-5 h-5" />
+                                </div>
                                 <div>
-                                    <p className="text-xs uppercase tracking-widest text-muted-foreground">Location</p>
-                                    <p>Kenya</p>
+                                    <h4 className="font-medium text-foreground">Location</h4>
+                                    <p className="text-muted-foreground">Kenya</p>
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-4">
-                                <span className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                                    <Phone className="w-5 h-5 text-muted-foreground" />
-                                </span>
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                                    <Phone className="w-5 h-5" />
+                                </div>
                                 <div>
-                                    <p className="text-xs uppercase tracking-widest text-muted-foreground">Phone</p>
-                                    <p>+254 711 471 269</p>
+                                    <h4 className="font-medium text-foreground">Phone</h4>
+                                    <p className="text-muted-foreground">+254 711 471 269</p>
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-4">
-                                <span className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                                    <Mail className="w-5 h-5 text-muted-foreground" />
-                                </span>
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 rounded-full bg-primary/10 text-primary">
+                                    <Mail className="w-5 h-5" />
+                                </div>
                                 <div>
-                                    <p className="text-xs uppercase tracking-widest text-muted-foreground">Email</p>
-                                    <p>beatricesadachilumo@gmail.com</p>
+                                    <h4 className="font-medium text-foreground">Email</h4>
+                                    <p className="text-muted-foreground">beatricesadachilumo@gmail.com</p>
                                 </div>
                             </div>
                         </div>
                     </motion.div>
 
-                    <motion.form
-                        initial={{ opacity: 0, y: 16 }}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex-1 space-y-5"
-                        onSubmit={(e) => e.preventDefault()}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="flex-1"
                     >
-                        {[{ label: "Name", id: "name", type: "text", placeholder: "Your Name" }, { label: "Email", id: "email", type: "email", placeholder: "your@email.com" }].map((field) => (
-                            <div key={field.id} className="space-y-2">
-                                <label htmlFor={field.id} className="text-xs uppercase tracking-widest text-muted-foreground">
-                                    {field.label}
-                                </label>
+                        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="space-y-2">
+                                    <label htmlFor="name" className="text-sm font-medium text-foreground">Name</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                                        placeholder="John Doe"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label htmlFor="email" className="text-sm font-medium text-foreground">Email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                                        placeholder="john@example.com"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label htmlFor="subject" className="text-sm font-medium text-foreground">Subject</label>
                                 <input
-                                    type={field.type}
-                                    id={field.id}
-                                    placeholder={field.placeholder}
-                                    className="w-full rounded-2xl border border-border bg-white/50 px-5 py-3 text-foreground focus:border-primary focus:bg-white outline-none transition"
+                                    type="text"
+                                    id="subject"
+                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                                    placeholder="Project Inquiry"
                                 />
                             </div>
-                        ))}
 
-                        <div className="space-y-2">
-                            <label htmlFor="message" className="text-xs uppercase tracking-widest text-muted-foreground">
-                                Message
-                            </label>
-                            <textarea
-                                id="message"
-                                rows={4}
-                                placeholder="How can I help you?"
-                                className="w-full rounded-2xl border border-border bg-white/50 px-5 py-3 text-foreground focus:border-primary focus:bg-white outline-none transition resize-none"
-                            />
-                        </div>
+                            <div className="space-y-2">
+                                <label htmlFor="message" className="text-sm font-medium text-foreground">Message</label>
+                                <textarea
+                                    id="message"
+                                    rows={4}
+                                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
+                                    placeholder="Tell me about your project..."
+                                />
+                            </div>
 
-                        <button
-                            type="submit"
-                            className="w-full flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground py-4 font-semibold tracking-widest uppercase hover:opacity-90 transition-opacity"
-                        >
-                            <Send className="w-4 h-4" />
-                            Send Message
-                        </button>
-                    </motion.form>
+                            <button className="w-full py-4 rounded-xl bg-foreground text-background font-bold text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg shadow-black/20">
+                                Send Message
+                            </button>
+                        </form>
+                    </motion.div>
                 </div>
             </div>
         </section>
