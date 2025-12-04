@@ -109,12 +109,12 @@ export function Hero() {
                     </div>
                 </motion.div>
 
-                {/* Scroll Down Circle */}
+                {/* Scroll Down - Centered Circle */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.5 }}
-                    className="absolute left-0 bottom-10 hidden lg:flex items-center justify-center w-24 h-24"
+                    className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex items-center justify-center w-24 h-24"
                 >
                     <div className="relative w-full h-full animate-spin-slow">
                         <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible">

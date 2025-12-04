@@ -5,7 +5,7 @@ import { Send, Mail, MapPin, Phone } from "lucide-react";
 
 export function Contact() {
     return (
-        <section id="contact" className="py-24 px-4 md:px-8 relative bg-background">
+        <section id="contact" className="py-16 md:py-24 px-4 md:px-8 relative bg-background">
             <div className="max-w-5xl mx-auto rounded-[40px] border border-border bg-white/60 backdrop-blur-sm px-8 py-16 md:px-16 shadow-lg shadow-black/5">
                 <div className="flex flex-col md:flex-row gap-16">
                     <motion.div

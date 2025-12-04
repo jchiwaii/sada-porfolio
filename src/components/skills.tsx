@@ -28,7 +28,7 @@ const skills = [
 
 export function Skills() {
     return (
-        <section className="relative py-24 px-4 md:px-8 bg-muted/30">
+        <section className="relative py-16 md:py-24 px-4 md:px-8 bg-muted/30">
             <div className="absolute inset-0 opacity-[0.3]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
             <div className="max-w-6xl mx-auto relative z-10">
                 <div className="max-w-3xl mb-16">

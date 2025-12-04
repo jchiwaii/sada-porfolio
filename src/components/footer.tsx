@@ -1,69 +1,80 @@
 "use client";
 
-import { Linkedin, Mail } from "lucide-react";
+import { ArrowUp } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 export function Footer() {
+    const [showScroll, setShowScroll] = useState(false);
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setShowScroll(true);
+            } else {
+                setShowScroll(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
-        <footer className="px-4 md:px-8 pt-24 pb-12 bg-muted/30">
-            <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-16 border-b border-border">
-                    <div className="space-y-6">
-                        <h3 className="text-3xl font-display font-bold text-foreground">
-                            Stay in the <span className="italic font-light">loop</span>
-                        </h3>
-                        <p className="text-muted-foreground">
-                            Monthly notes on process, favorite materials, and behind-the-scenes looks at ongoing builds.
-                        </p>
-                        <form className="flex flex-col sm:flex-row gap-3" onSubmit={(e) => e.preventDefault()}>
-                            <input
-                                type="email"
-                                placeholder="Email address"
-                                className="flex-1 rounded-full border border-border bg-background px-6 py-3 text-foreground focus:border-primary outline-none transition-colors"
-                            />
-                            <button className="px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity">
-                                Subscribe
-                            </button>
-                        </form>
-                    </div>
-
-                    <div className="space-y-4">
-                        <h4 className="text-xs uppercase tracking-widest text-muted-foreground">Quick links</h4>
-                        <ul className="space-y-2 text-foreground">
-                            {['About', 'Experience', 'Projects', 'Contact'].map((item) => (
-                                <li key={item}>
-                                    <a href={`#${item.toLowerCase()}`} className="hover:text-muted-foreground transition-colors">
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div className="space-y-4">
-                        <h4 className="text-xs uppercase tracking-widest text-muted-foreground">Connect</h4>
-                        <div className="flex gap-3">
-                            <a href="https://linkedin.com/in/beatrice-chilumo" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors">
-                                <Linkedin className="w-4 h-4" />
-                            </a>
-                            <a href="mailto:beatricesadachilumo@gmail.com" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors">
-                                <Mail className="w-4 h-4" />
-                            </a>
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                            beatricesadachilumo@gmail.com
-                            <br /> +254 711 471 269
-                        </p>
+        <>
+            <footer className="px-4 md:px-8 py-24 bg-background border-t border-border/40">
+                <div className="max-w-6xl mx-auto flex flex-col items-center justify-center text-center opacity-60 hover:opacity-100 transition-opacity duration-500">
+                    <h1 className="text-[10vw] leading-none font-display font-bold text-foreground tracking-tighter mb-6">
+                        CHILUMO
+                    </h1>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground font-medium tracking-wide uppercase">
+                        <span>© {new Date().getFullYear()}</span>
+                        <span className="w-1 h-1 rounded-full bg-border" />
+                        <span>Beatrice Sada Chilumo</span>
                     </div>
                 </div>
+            </footer>
 
-                <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-                    <p>© {new Date().getFullYear()} Sada Studio. Built with care in Figma & Next.</p>
-                    <div className="flex gap-6">
-                        <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-                        <a href="#" className="hover:text-foreground transition-colors">Terms</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+            {/* Circular Scroll Progress / Back to Top */}
+            <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: showScroll ? 1 : 0, scale: showScroll ? 1 : 0.8 }}
+                onClick={scrollToTop}
+                className="fixed bottom-8 right-8 z-50 w-14 h-14 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-md border border-border/50 shadow-lg text-foreground hover:bg-foreground hover:text-background transition-colors group"
+            >
+                <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100">
+                    <circle
+                        cx="50"
+                        cy="50"
+                        r="48"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className="text-muted/20"
+                    />
+                    <motion.circle
+                        cx="50"
+                        cy="50"
+                        r="48"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className="text-primary"
+                        style={{ pathLength: scaleX }}
+                    />
+                </svg>
+                <ArrowUp className="w-5 h-5 relative z-10" />
+            </motion.button>
+        </>
     );
 }

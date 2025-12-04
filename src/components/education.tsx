@@ -35,7 +35,7 @@ const education = [
 
 export function Education() {
     return (
-        <section className="py-24 px-4 md:px-8 bg-background border-t border-border">
+        <section className="py-16 md:py-24 px-4 md:px-8 bg-background border-t border-border">
             <div className="max-w-4xl mx-auto">
                 <div className="mb-12">
                     <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Background</p>
