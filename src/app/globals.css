@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  /* Deep Void */
-  --foreground: #e0d8c3;
-  /* Parchment */
+  --background: #f7f4ed;
+  /* Soft Shell */
+  --foreground: #1f261c;
+  /* Deep Ink */
 
-  --color-void: #050505;
-  --color-parchment: #e0d8c3;
-  --color-amethyst: #9966cc;
-  --color-rose-gold: #b76e79;
-  --color-sapphire: #0f52ba;
-  --color-gold: #ffd700;
-  --color-magic-teal: #008080;
+  --color-void: #f7f4ed;
+  --color-parchment: #1f261c;
+  --color-amethyst: #5f6f52;
+  --color-rose-gold: #c07f5c;
+  --color-sapphire: #7c8b7a;
+  --color-gold: #d4b483;
+  --color-magic-teal: #b5b1a3;
 
   --font-cinzel: "Cinzel", serif;
   --font-geist-sans: "Geist", sans-serif;
@@ -39,6 +39,7 @@ body {
   background-color: var(--color-void);
   color: var(--color-parchment);
   font-family: var(--font-sans);
+  line-height: 1.6;
 }
 
 h1,
@@ -56,16 +57,16 @@ h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-void);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(153, 102, 204, 0.3);
+  background: rgba(95, 111, 82, 0.35);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(153, 102, 204, 0.6);
+  background: rgba(95, 111, 82, 0.55);
 }
 
 /* Utility classes for RPG effects */
