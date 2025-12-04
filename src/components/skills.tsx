@@ -46,16 +46,16 @@ export function Skills() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-40px" }}
                             transition={{ duration: 0.45, delay: index * 0.08 }}
-                            className="rounded-[28px] border border-border bg-white/60 backdrop-blur-sm p-8 flex flex-col gap-6 shadow-sm hover:shadow-md transition-shadow"
+                            className="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col gap-6 shadow-sm hover:border-primary/50 transition-colors"
                         >
                             <div>
-                                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">{skillGroup.category}</p>
+                                <p className="text-xs uppercase tracking-widest text-primary mb-2 font-mono">{skillGroup.category}</p>
                                 <p className="text-sm text-muted-foreground leading-relaxed">{skillGroup.summary}</p>
                             </div>
-                            <div className="h-px bg-border" />
+                            <div className="h-px bg-white/10" />
                             <div className="flex flex-wrap gap-2">
                                 {skillGroup.items.map((item) => (
-                                    <span key={item} className="px-3 py-1.5 rounded-md bg-white border border-border text-sm text-foreground font-medium">
+                                    <span key={item} className="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-sm text-foreground/80 font-medium hover:text-primary hover:border-primary/30 transition-colors">
                                         {item}
                                     </span>
                                 ))}

@@ -54,20 +54,20 @@ export function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-40px" }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group relative rounded-[32px] border border-border bg-white/60 backdrop-blur-sm p-7 flex flex-col gap-5 shadow-sm hover:shadow-md transition-shadow"
+                            className="group relative rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-sm p-7 flex flex-col gap-5 shadow-sm hover:border-primary/50 transition-colors"
                         >
                             <div className="flex items-start justify-between">
-                                <div className="p-3 rounded-2xl bg-muted border border-border">
+                                <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-primary group-hover:bg-primary/10 transition-colors">
                                     {project.icon}
                                 </div>
                                 <div className="text-right">
-                                    <p className="text-xs uppercase tracking-widest text-muted-foreground">{project.year}</p>
+                                    <p className="text-xs uppercase tracking-widest text-muted-foreground font-mono">{project.year}</p>
                                     <p className="text-sm font-semibold text-foreground">{project.result}</p>
                                 </div>
                             </div>
 
                             <div>
-                                <h3 className="text-xl font-semibold text-foreground leading-tight mb-3">
+                                <h3 className="text-xl font-semibold text-foreground leading-tight mb-3 group-hover:text-primary transition-colors">
                                     {project.title}
                                 </h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -77,7 +77,7 @@ export function Projects() {
 
                             <div className="flex flex-wrap items-center gap-2 mt-auto">
                                 {project.tags.map((tag) => (
-                                    <span key={tag} className="px-3 py-1 rounded-full bg-muted text-xs font-medium tracking-wide text-muted-foreground">
+                                    <span key={tag} className="px-3 py-1 rounded-full bg-white/5 border border-white/5 text-xs font-medium tracking-wide text-muted-foreground group-hover:border-primary/20 group-hover:text-primary/80 transition-colors">
                                         {tag}
                                     </span>
                                 ))}

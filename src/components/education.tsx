@@ -52,18 +52,18 @@ export function Education() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
-                            className="p-6 rounded-2xl border border-border bg-white/40 hover:bg-white/60 transition-colors"
+                            className="p-6 rounded-2xl border border-white/10 bg-white/5 hover:border-primary/50 transition-colors group"
                         >
                             <div className="flex justify-between items-start mb-4">
-                                <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground bg-muted px-2 py-1 rounded">
+                                <span className="text-xs font-medium uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded font-mono">
                                     {edu.year}
                                 </span>
                                 <span className="text-xs text-muted-foreground">{edu.location}</span>
                             </div>
-                            <h3 className="text-lg font-bold text-foreground mb-1 leading-snug">{edu.degree}</h3>
-                            <p className="text-sm text-primary font-medium mb-1">{edu.school}</p>
+                            <h3 className="text-lg font-bold text-foreground mb-1 leading-snug group-hover:text-primary transition-colors">{edu.degree}</h3>
+                            <p className="text-sm text-muted-foreground font-medium mb-1">{edu.school}</p>
                             {edu.details && (
-                                <p className="text-sm text-muted-foreground italic">{edu.details}</p>
+                                <p className="text-sm text-muted-foreground/60 italic">{edu.details}</p>
                             )}
                         </motion.div>
                     ))}
