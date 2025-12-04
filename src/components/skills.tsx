@@ -1,44 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Ornament } from "@/components/ui/ornament";
+
 
 const skills = [
     {
-        category: "Languages",
-        summary: "The syntax palette I reach for daily.",
-        items: ["TypeScript", "JavaScript (ESNext)", "Python", "SQL"],
+        category: "Technical Skills",
+        summary: "Specialized engineering capabilities.",
+        items: ["PLC Programming (Siemens S7-1200)", "Manufacturing Process Control", "Instrumentation Systems", "Equipment Calibration", "Process Optimization", "Production Line Troubleshooting", "Technical Documentation"],
     },
     {
-        category: "Frontend",
-        summary: "Layering interactions with motion & systems.",
-        items: ["React", "Next.js", "Framer Motion", "Tailwind CSS"],
+        category: "Manufacturing",
+        summary: "Operational and industrial expertise.",
+        items: ["Industrial Instrumentation", "Control Systems", "Assembly Line Operations", "Quality Control", "Preventive Maintenance", "Production Monitoring"],
     },
     {
-        category: "Backend",
-        summary: "APIs designed around clarity and scale.",
-        items: ["Node.js", "GraphQL", "PostgreSQL", "Redis"],
+        category: "Software",
+        summary: "Digital tools and platforms.",
+        items: ["Microsoft Office Suite", "CAD Systems"],
     },
     {
-        category: "Ops & Delivery",
-        summary: "Keeping releases calm and observable.",
-        items: ["Docker", "AWS", "CI/CD", "Vercel"],
+        category: "Core Competencies",
+        summary: "Professional attributes and soft skills.",
+        items: ["Problem-Solving", "Analytical Thinking", "Team Collaboration", "Adaptability", "Detail-Oriented Approach", "Safety Compliance"],
     },
 ];
 
 export function Skills() {
     return (
-        <section className="relative py-28 px-4 md:px-8 bg-[#F1EDE3]">
-            <div className="absolute inset-0 opacity-[0.5]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(31,38,28,0.08) 1px, transparent 0)', backgroundSize: '26px 26px' }} />
+        <section className="relative py-24 px-4 md:px-8 bg-muted/30">
+            <div className="absolute inset-0 opacity-[0.3]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
             <div className="max-w-6xl mx-auto relative z-10">
                 <div className="max-w-3xl mb-16">
-                    <p className="text-xs uppercase tracking-[0.35em] text-[#7C8674] mb-4">Craft & systems</p>
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-[#1F261C] leading-tight">
-                        A balanced stack for taking ideas from sketchbook to shipped product.
+                    <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Expertise</p>
+                    <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground leading-tight">
+                        A comprehensive toolkit for <span className="italic font-light">industrial excellence</span>.
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {skills.map((skillGroup, index) => (
                         <motion.div
                             key={skillGroup.category}
@@ -46,21 +46,20 @@ export function Skills() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-40px" }}
                             transition={{ duration: 0.45, delay: index * 0.08 }}
-                            className="rounded-[28px] border border-[#CFC7B8] bg-white/80 backdrop-blur p-6 flex flex-col gap-5 shadow-[0_20px_45px_rgba(31,38,28,0.08)]"
+                            className="rounded-[28px] border border-border bg-white/60 backdrop-blur-sm p-8 flex flex-col gap-6 shadow-sm hover:shadow-md transition-shadow"
                         >
                             <div>
-                                <p className="text-xs uppercase tracking-[0.3em] text-[#7C8674] mb-2">{skillGroup.category}</p>
-                                <p className="text-sm text-[#4A5145] leading-relaxed">{skillGroup.summary}</p>
+                                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">{skillGroup.category}</p>
+                                <p className="text-sm text-muted-foreground leading-relaxed">{skillGroup.summary}</p>
                             </div>
-                            <div className="h-px bg-[#E5E0D2]" />
-                            <ul className="space-y-3 text-sm text-[#1F261C]">
+                            <div className="h-px bg-border" />
+                            <div className="flex flex-wrap gap-2">
                                 {skillGroup.items.map((item) => (
-                                    <li key={item} className="flex items-center gap-3">
-                                        <span className="text-[#5F6F52]">•</span>
-                                        <span>{item}</span>
-                                    </li>
+                                    <span key={item} className="px-3 py-1.5 rounded-md bg-white border border-border text-sm text-foreground font-medium">
+                                        {item}
+                                    </span>
                                 ))}
-                            </ul>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

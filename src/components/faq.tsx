@@ -27,12 +27,12 @@ export function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-28 px-4 md:px-8">
+        <section className="py-28 px-4 md:px-8 bg-background">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-14">
-                    <p className="text-xs uppercase tracking-[0.35em] text-[#7C8674] mb-3">In conversation</p>
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-[#1F261C]">
-                        Frequently asked questions about the way we’ll work together.
+                    <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">In conversation</p>
+                    <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
+                        Frequently asked questions about the way we’ll <span className="italic font-light">work together</span>.
                     </h2>
                 </div>
 
@@ -44,14 +44,14 @@ export function FAQ() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-40px" }}
                             transition={{ duration: 0.4, delay: index * 0.05 }}
-                            className="rounded-[24px] border border-black/5 bg-white/80 backdrop-blur"
+                            className="rounded-[24px] border border-border bg-white/60 backdrop-blur-sm overflow-hidden shadow-sm"
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full flex items-center justify-between px-6 py-5 text-left"
+                                className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-muted/50 transition-colors"
                             >
-                                <span className="text-lg font-medium text-[#1F261C] leading-snug">{faq.question}</span>
-                                <div className={`p-2 rounded-full border border-[#1F261C]/10 transition-colors ${openIndex === index ? 'bg-[#1F261C] text-[#F7F4ED]' : 'text-[#4A5145]'}`}>
+                                <span className="text-lg font-medium text-foreground leading-snug">{faq.question}</span>
+                                <div className={`p-2 rounded-full border border-border transition-colors ${openIndex === index ? 'bg-primary text-primary-foreground' : 'text-muted-foreground'}`}>
                                     {openIndex === index ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                                 </div>
                             </button>
@@ -61,7 +61,7 @@ export function FAQ() {
                                 animate={{ height: openIndex === index ? "auto" : 0 }}
                                 className="overflow-hidden"
                             >
-                                <div className="px-6 pb-6 text-[#4A5145] leading-relaxed">
+                                <div className="px-6 pb-6 text-muted-foreground leading-relaxed">
                                     {faq.answer}
                                 </div>
                             </motion.div>

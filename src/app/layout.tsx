@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Cinzel, Geist, JetBrains_Mono } from "next/font/google";
+import { Newsreader, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -31,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cinzel.variable} ${geistSans.variable} ${jetbrainsMono.variable} antialiased font-sans bg-void text-parchment overflow-x-hidden`}
+        className={`${newsreader.variable} ${ibmPlexSans.variable} ${jetbrainsMono.variable} antialiased font-sans bg-background text-foreground overflow-x-hidden`}
       >
         <Navbar />
         {children}
