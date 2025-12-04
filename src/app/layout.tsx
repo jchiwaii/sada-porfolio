@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { ReactLenis } from 'lenis/react';
-import { newsreader, ibmPlexSans, jetbrainsMono } from "@/app/fonts";
+import { newsreader, ibmPlexSans, jetbrainsMono, dancingScript } from "@/app/fonts";
 
 export default function RootLayout({
   children,
@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${newsreader.variable} ${ibmPlexSans.variable} ${jetbrainsMono.variable} antialiased font-sans bg-background text-foreground overflow-x-hidden`}
+        className={`${newsreader.variable} ${ibmPlexSans.variable} ${jetbrainsMono.variable} ${dancingScript.variable} antialiased font-sans bg-background text-foreground overflow-x-hidden`}
       >
         <ReactLenis root>
           <div className="noise-overlay" />

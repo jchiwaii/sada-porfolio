@@ -23,43 +23,49 @@ export function Navbar() {
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="pointer-events-auto relative flex items-center justify-between gap-4 md:gap-12 px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg shadow-black/5 ring-1 ring-white/20 overflow-hidden"
+                    className="pointer-events-auto relative w-full max-w-5xl flex items-center justify-between px-2 py-2 rounded-full bg-[#0A0A0A]/60 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/20 ring-1 ring-white/5"
                 >
-                    {/* Aurora Effect Background */}
-                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-rose-100/10 via-teal-100/10 to-violet-100/10 opacity-50" />
-                    <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/40 via-transparent to-transparent opacity-50" />
+                    {/* Glossy overlay */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/5 to-transparent opacity-50 pointer-events-none" />
 
                     {/* Logo */}
-                    <Link href="/" className="relative z-50 shrink-0">
-                        <div className="text-xl font-bold font-mono tracking-tight text-foreground">
-                            Sada<span className="text-muted-foreground"></span>
+                    <Link href="/" className="relative z-50 shrink-0 pl-6 pr-2">
+                        <div className="text-2xl font-bold tracking-tight text-foreground flex items-center gap-2 font-[family-name:var(--font-dancing-script)]">
+                            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                            Sada.
                         </div>
                     </Link>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden md:flex items-center justify-center gap-8 absolute left-1/2 -translate-x-1/2">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
                             >
-                                {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all group-hover:w-full" />
+                                <span className="relative">
+                                    {link.name}
+                                    <span className="absolute -bottom-1 left-0 w-full h-px bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+                                </span>
                             </Link>
                         ))}
                     </div>
 
                     {/* CTA & Mobile Toggle */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 pr-2">
                         <a
                             href="#contact"
-                            className="hidden md:block px-5 py-2 bg-primary text-primary-foreground rounded-full font-medium text-xs tracking-wide hover:opacity-90 transition-opacity shadow-sm"
+                            className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-white/5 hover:bg-white/10 text-foreground rounded-full font-medium text-sm tracking-wide transition-all border border-white/5 hover:border-white/10 group"
                         >
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                            </span>
                             Let's Talk
                         </a>
                         <button
-                            className="md:hidden p-2 rounded-full hover:bg-white/20 transition-colors text-foreground"
+                            className="md:hidden p-3 rounded-full hover:bg-white/10 transition-colors text-foreground"
                             onClick={() => setIsOpen(!isOpen)}
                         >
                             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -74,13 +80,13 @@ export function Navbar() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="fixed inset-0 bg-background/95 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-8 md:hidden"
+                    className="fixed inset-0 bg-[#020202]/95 backdrop-blur-3xl z-40 flex flex-col items-center justify-center gap-8 md:hidden"
                 >
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-3xl font-display font-bold text-foreground"
+                            className="text-4xl font-display font-light italic text-foreground hover:text-primary transition-colors"
                             onClick={() => setIsOpen(false)}
                         >
                             {link.name}
@@ -89,7 +95,7 @@ export function Navbar() {
                     <a
                         href="#contact"
                         onClick={() => setIsOpen(false)}
-                        className="mt-4 px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium text-lg"
+                        className="mt-8 px-8 py-4 bg-white/5 border border-white/10 text-foreground rounded-full font-medium text-lg"
                     >
                         Let's Talk
                     </a>

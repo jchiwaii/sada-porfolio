@@ -80,7 +80,7 @@ export function Hero() {
                     <div className="h-px w-12 bg-white/10" />
                     <div className="flex items-center gap-3">
                         <a
-                            href="https://linkedin.com/in/beatrice-chilumo"
+                            href="https://www.linkedin.com/in/beatrice-chilumo-/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2.5 border border-white/10 rounded-full text-muted-foreground hover:text-foreground hover:border-foreground hover:bg-white/5 transition-all duration-300"
@@ -88,7 +88,7 @@ export function Hero() {
                             <Linkedin className="w-4 h-4" />
                         </a>
                         <a
-                            href="mailto:beatricesadachilumo@gmail.com"
+                            href="mailto:beatricechilumo1@gmail.com"
                             className="p-2.5 border border-white/10 rounded-full text-muted-foreground hover:text-foreground hover:border-foreground hover:bg-white/5 transition-all duration-300"
                         >
                             <Mail className="w-4 h-4" />

@@ -49,7 +49,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <h4 className="font-medium text-foreground">Email</h4>
-                                    <p className="text-muted-foreground">beatricesadachilumo1@gmail.com</p>
+                                    <p className="text-muted-foreground">beatricechilumo1@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ export function Contact() {
                                 const formData = new FormData(e.currentTarget);
                                 const subject = formData.get('subject');
                                 const body = formData.get('message');
-                                window.location.href = `mailto:beatricesadachilumo1@gmail.com?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(body as string)}`;
+                                window.location.href = `mailto:beatricechilumo1@gmail.com?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(body as string)}`;
                             }}
                         >
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function About() {
     return (
@@ -32,7 +33,7 @@ export function About() {
                         </div>
                     </motion.div>
 
-                    {/* Photo Grid Placeholder */}
+                    {/* Photo Grid */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -42,26 +43,36 @@ export function About() {
                     >
                         <div className="grid grid-cols-2 gap-4">
                             <div className="space-y-4">
-                                <div className="h-64 w-full bg-muted rounded-2xl border border-border overflow-hidden relative group">
-                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 text-xs uppercase tracking-widest group-hover:bg-muted/80 transition-colors">
-                                        Photo 01
-                                    </div>
+                                <div className="h-64 w-full bg-white/5 rounded-2xl border border-white/10 overflow-hidden relative group">
+                                    <Image
+                                        src="/1.jpeg"
+                                        alt="Working on site"
+                                        fill
+                                        className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                                    />
                                 </div>
-                                <div className="h-40 w-full bg-muted rounded-2xl border border-border overflow-hidden relative group">
-                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 text-xs uppercase tracking-widest group-hover:bg-muted/80 transition-colors">
-                                        Photo 02
-                                    </div>
+                                <div className="h-40 w-full bg-white/5 rounded-2xl border border-white/10 overflow-hidden relative group">
+                                    <Image
+                                        src="/2.jpeg"
+                                        alt="Technical setup"
+                                        fill
+                                        className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                                    />
                                 </div>
                             </div>
                             <div className="space-y-4 pt-8">
-                                <div className="h-40 w-full bg-muted rounded-2xl border border-border overflow-hidden relative group">
-                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 text-xs uppercase tracking-widest group-hover:bg-muted/80 transition-colors">
-                                        Photo 03
-                                    </div>
+                                <div className="h-40 w-full bg-white/5 rounded-2xl border border-white/10 overflow-hidden relative group">
+                                    <Image
+                                        src="/3.jpeg"
+                                        alt="Engineering detail"
+                                        fill
+                                        className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                                    />
                                 </div>
-                                <div className="h-64 w-full bg-muted rounded-2xl border border-border overflow-hidden relative group">
-                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 text-xs uppercase tracking-widest group-hover:bg-muted/80 transition-colors">
-                                        Photo 04
+                                <div className="h-64 w-full bg-white/5 rounded-2xl border border-white/10 overflow-hidden relative group flex items-center justify-center">
+                                    <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '16px 16px' }} />
+                                    <div className="text-white/20 font-mono text-xs uppercase tracking-widest">
+                                        More Loading...
                                     </div>
                                 </div>
                             </div>
