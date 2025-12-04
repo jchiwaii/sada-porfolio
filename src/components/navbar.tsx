@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { useLenis } from 'lenis/react';
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const lenis = useLenis();
 
     const navLinks = [
         { name: "Home", href: "/" },
@@ -15,6 +17,18 @@ export function Navbar() {
         { name: "Projects", href: "#projects" },
         { name: "Contact", href: "#contact" },
     ];
+
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith("#")) {
+            e.preventDefault();
+            lenis?.scrollTo(href);
+            setIsOpen(false);
+        } else if (href === "/") {
+            e.preventDefault();
+            lenis?.scrollTo(0);
+            setIsOpen(false);
+        }
+    };
 
     return (
         <>
@@ -29,7 +43,7 @@ export function Navbar() {
                     <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/5 to-transparent opacity-50 pointer-events-none" />
 
                     {/* Logo */}
-                    <Link href="/" className="relative z-50 shrink-0 pl-6 pr-2">
+                    <Link href="/" className="relative z-50 shrink-0 pl-6 pr-2" onClick={(e) => handleLinkClick(e, "/")}>
                         <div className="text-2xl font-bold tracking-tight text-foreground flex items-center gap-2 font-[family-name:var(--font-dancing-script)]">
                             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                             Sada.
@@ -43,6 +57,7 @@ export function Navbar() {
                                 key={link.name}
                                 href={link.href}
                                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
+                                onClick={(e) => handleLinkClick(e, link.href)}
                             >
                                 <span className="relative">
                                     {link.name}
@@ -57,6 +72,7 @@ export function Navbar() {
                         <a
                             href="#contact"
                             className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-white/5 hover:bg-white/10 text-foreground rounded-full font-medium text-sm tracking-wide transition-all border border-white/5 hover:border-white/10 group"
+                            onClick={(e) => handleLinkClick(e, "#contact")}
                         >
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -87,14 +103,14 @@ export function Navbar() {
                             key={link.name}
                             href={link.href}
                             className="text-4xl font-display font-light italic text-foreground hover:text-primary transition-colors"
-                            onClick={() => setIsOpen(false)}
+                            onClick={(e) => handleLinkClick(e, link.href)}
                         >
                             {link.name}
                         </Link>
                     ))}
                     <a
                         href="#contact"
-                        onClick={() => setIsOpen(false)}
+                        onClick={(e) => handleLinkClick(e, "#contact")}
                         className="mt-8 px-8 py-4 bg-white/5 border border-white/10 text-foreground rounded-full font-medium text-lg"
                     >
                         Let's Talk

@@ -13,7 +13,7 @@ export default function RootLayout({
       <body
         className={`${newsreader.variable} ${ibmPlexSans.variable} ${jetbrainsMono.variable} ${dancingScript.variable} antialiased font-sans bg-background text-foreground overflow-x-hidden`}
       >
-        <ReactLenis root>
+        <ReactLenis root options={{ lerp: 0.01, duration: 3.5, smoothWheel: true }}>
           <div className="noise-overlay" />
           <Navbar />
           {children}
