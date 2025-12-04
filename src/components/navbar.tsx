@@ -32,7 +32,7 @@ export function Navbar() {
                     {/* Logo */}
                     <Link href="/" className="relative z-50 shrink-0">
                         <div className="text-xl font-bold font-mono tracking-tight text-foreground">
-                            B<span className="text-muted-foreground">.</span>
+                            Sada<span className="text-muted-foreground"></span>
                         </div>
                     </Link>
 
