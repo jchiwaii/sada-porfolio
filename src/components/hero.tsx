@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowDown, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 
 export function Hero() {
@@ -102,32 +103,40 @@ export function Hero() {
                 {/* Halo */}
                 <div className="absolute inset-y-10 inset-x-0 rounded-[280px] bg-gradient-to-b from-white/5 to-transparent blur-3xl opacity-20" />
 
-                {/* Main Image Placeholder - Blueprint Style */}
+                {/* Main Image - Blueprint Style */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
                     animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                     transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     className="relative w-[300px] h-[460px] md:w-[400px] md:h-[580px] bg-[#0A0A0A] border border-white/10 overflow-hidden"
                 >
-                    {/* Technical Grid Background */}
-                    <div className="absolute inset-0 opacity-[0.2]" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-
                     {/* Crosshairs */}
-                    <div className="absolute top-4 left-4 w-4 h-4 border-l border-t border-white/30" />
-                    <div className="absolute top-4 right-4 w-4 h-4 border-r border-t border-white/30" />
-                    <div className="absolute bottom-4 left-4 w-4 h-4 border-l border-b border-white/30" />
-                    <div className="absolute bottom-4 right-4 w-4 h-4 border-r border-b border-white/30" />
+                    <div className="absolute top-4 left-4 w-4 h-4 border-l border-t border-white/30 z-20" />
+                    <div className="absolute top-4 right-4 w-4 h-4 border-r border-t border-white/30 z-20" />
+                    <div className="absolute bottom-4 left-4 w-4 h-4 border-l border-b border-white/30 z-20" />
+                    <div className="absolute bottom-4 right-4 w-4 h-4 border-r border-b border-white/30 z-20" />
 
-                    {/* Center Label */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                        <div className="w-16 h-16 rounded-full border border-dashed border-white/20 flex items-center justify-center animate-[spin_10s_linear_infinite]">
-                            <div className="w-12 h-12 rounded-full border border-white/10" />
+                    {/* Image */}
+                    <div className="absolute inset-0">
+                        <Image
+                            src="/potrait.jpeg"
+                            alt="Beatrice Sada Chilumo"
+                            fill
+                            className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-700"
+                            priority
+                        />
+                    </div>
+
+                    {/* Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent z-10" />
+
+                    {/* Technical Label */}
+                    <div className="absolute bottom-6 left-6 z-20">
+                        <div className="text-white/60 font-mono text-[10px] tracking-widest uppercase mb-1">
+                            Subject
                         </div>
-                        <div className="text-white/40 font-mono text-[10px] tracking-widest uppercase">
-                            Technical Portrait
-                        </div>
-                        <div className="text-white/20 font-mono text-[9px] tracking-widest uppercase">
-                            FIG. 01
+                        <div className="text-white font-mono text-xs tracking-widest uppercase">
+                            Beatrice Sada Chilumo
                         </div>
                     </div>
                 </motion.div>

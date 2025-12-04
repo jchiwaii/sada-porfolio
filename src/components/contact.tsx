@@ -49,7 +49,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <h4 className="font-medium text-foreground">Email</h4>
-                                    <p className="text-muted-foreground">beatricesadachilumo@gmail.com</p>
+                                    <p className="text-muted-foreground">beatricesadachilumo1@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -62,13 +62,24 @@ export function Contact() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="flex-1"
                     >
-                        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                            <div className="grid grid-cols-2 gap-4">
+                        <form
+                            className="space-y-4"
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                const formData = new FormData(e.currentTarget);
+                                const subject = formData.get('subject');
+                                const body = formData.get('message');
+                                window.location.href = `mailto:beatricesadachilumo1@gmail.com?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(body as string)}`;
+                            }}
+                        >
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <label htmlFor="name" className="text-sm font-medium text-foreground">Name</label>
                                     <input
                                         type="text"
+                                        name="name"
                                         id="name"
+                                        required
                                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                                         placeholder="John Doe"
                                     />
@@ -77,7 +88,9 @@ export function Contact() {
                                     <label htmlFor="email" className="text-sm font-medium text-foreground">Email</label>
                                     <input
                                         type="email"
+                                        name="email"
                                         id="email"
+                                        required
                                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                                         placeholder="john@example.com"
                                     />
@@ -88,7 +101,9 @@ export function Contact() {
                                 <label htmlFor="subject" className="text-sm font-medium text-foreground">Subject</label>
                                 <input
                                     type="text"
+                                    name="subject"
                                     id="subject"
+                                    required
                                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                                     placeholder="Project Inquiry"
                                 />
@@ -97,14 +112,16 @@ export function Contact() {
                             <div className="space-y-2">
                                 <label htmlFor="message" className="text-sm font-medium text-foreground">Message</label>
                                 <textarea
+                                    name="message"
                                     id="message"
                                     rows={4}
+                                    required
                                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
                                     placeholder="Tell me about your project..."
                                 />
                             </div>
 
-                            <button className="w-full py-4 rounded-xl bg-foreground text-background font-bold text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg shadow-black/20">
+                            <button type="submit" className="w-full py-4 rounded-xl bg-foreground text-background font-bold text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg shadow-black/20">
                                 Send Message
                             </button>
                         </form>
