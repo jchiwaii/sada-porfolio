@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cinzel, Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/navbar";
 
 const cinzel = Cinzel({
   variable: "--font-cinzel",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${cinzel.variable} ${geistSans.variable} ${jetbrainsMono.variable} antialiased font-sans bg-void text-parchment overflow-x-hidden`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

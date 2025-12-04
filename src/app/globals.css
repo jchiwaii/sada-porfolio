@@ -31,6 +31,8 @@
   --color-sapphire: var(--color-sapphire);
   --color-gold: var(--color-gold);
   --color-magic-teal: var(--color-magic-teal);
+
+  --animate-spin-slow: spin 10s linear infinite;
 }
 
 body {
