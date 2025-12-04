@@ -109,32 +109,34 @@ export function Hero() {
                     </div>
                 </motion.div>
 
-                {/* Scroll Down - Centered Circle */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex items-center justify-center w-24 h-24"
-                >
-                    <div className="relative w-full h-full animate-spin-slow">
-                        <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible">
-                            <path
-                                id="curve"
-                                d="M 50 50 m -37 0 a 37 37 0 1 1 74 0 a 37 37 0 1 1 -74 0"
-                                fill="transparent"
-                            />
-                            <text className="text-[9px] uppercase tracking-[0.25em] font-medium fill-muted-foreground">
-                                <textPath href="#curve" startOffset="0%">
-                                    Scroll Down • Scroll Down • Scroll Down •
-                                </textPath>
-                            </text>
-                        </svg>
-                    </div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <ArrowDown className="w-4 h-4 text-muted-foreground" />
-                    </div>
-                </motion.div>
+
             </div>
+
+            {/* Scroll Down - Centered Circle */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex items-center justify-center w-24 h-24"
+            >
+                <div className="relative w-full h-full animate-spin-slow">
+                    <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible">
+                        <path
+                            id="curve"
+                            d="M 50 50 m -37 0 a 37 37 0 1 1 74 0 a 37 37 0 1 1 -74 0"
+                            fill="transparent"
+                        />
+                        <text className="text-[9px] uppercase tracking-[0.25em] font-medium fill-muted-foreground">
+                            <textPath href="#curve" startOffset="0%">
+                                Scroll Down • Scroll Down • Scroll Down •
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <ArrowDown className="w-4 h-4 text-muted-foreground" />
+                </div>
+            </motion.div>
         </section>
     );
 }

@@ -1,38 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  /* Modern Clean Palette */
-  --background: #F9F8F6;
-  /* Soft off-white */
-  --foreground: #18181B;
-  /* Sharp dark */
-
-  --primary: #18181B;
-  --primary-foreground: #FFFFFF;
-
-  --secondary: #E4E4E7;
-  --secondary-foreground: #18181B;
-
-  --muted: #F4F4F5;
-  --muted-foreground: #71717A;
-
-  --accent: #F4F4F5;
-  --accent-foreground: #18181B;
-
-  --border: #E4E4E7;
-  --input: #E4E4E7;
-  --ring: #18181B;
-
-  /* Legacy mappings for compatibility (will refactor components to use semantic names later) */
-  --color-void: var(--background);
-  --color-parchment: var(--foreground);
-  --color-amethyst: #71717A;
-  /* Muted gray instead of green */
-  --color-rose-gold: #A1A1AA;
-  --color-sapphire: #52525B;
-  --color-gold: #18181B;
-  /* Just black for "gold" elements to make them minimal */
-  --color-magic-teal: #D4D4D8;
 
   --font-newsreader: "Newsreader", serif;
   --font-ibm-plex-sans: "IBM Plex Sans", sans-serif;
