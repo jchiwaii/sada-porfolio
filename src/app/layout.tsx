@@ -29,6 +29,22 @@ export const metadata: Metadata = {
     description: "Portfolio of Beatrice Sada Chilumo, a Control & Instrumentation Engineer specializing in PLC programming, automation, and industrial process optimization.",
     images: ["/potrait.jpeg"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png" },
+    ],
+    other: [
+      {
+        rel: "manifest",
+        url: "/site.webmanifest",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
