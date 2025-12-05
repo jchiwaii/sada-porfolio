@@ -35,6 +35,19 @@ export function Footer() {
             <footer className="relative py-12 px-6 border-t border-white/5 bg-transparent overflow-hidden">
                 <div className="max-w-6xl mx-auto flex flex-col items-center justify-center text-center opacity-60 hover:opacity-100 transition-opacity duration-500">
 
+                    {/* Signature */}
+                    <div className="mb-6 text-lg font-display italic text-muted-foreground">
+                        <span>Regards </span>
+                        <a
+                            href="https://www.linkedin.com/in/john-chiwai/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary/80 transition-colors duration-300 underline decoration-primary/30 hover:decoration-primary/60 underline-offset-4"
+                        >
+                            John
+                        </a>
+                    </div>
+
                     <div className="flex items-center gap-2 text-sm text-muted-foreground font-medium tracking-wide uppercase">
                         <span>© {new Date().getFullYear()}</span>
                         <span className="w-1 h-1 rounded-full bg-border" />
